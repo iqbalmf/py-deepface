@@ -2,8 +2,6 @@ from flask import Flask
 from app.routes.face_routes import face_bp
 from config import Config
 from database import db
-from app.models.photo_model import Photo
-from app.models.face_model import Face
 
 
 def create_app():

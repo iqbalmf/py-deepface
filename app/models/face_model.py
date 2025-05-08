@@ -1,5 +1,8 @@
-from sqlalchemy.sql import func
+from sqlalchemy.dialects.postgresql import UUID
 
+from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
+import uuid
 from database import db
 
 
@@ -11,3 +14,5 @@ class Face(db.Model):
     descriptor = db.Column(db.JSON, nullable=False)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), onupdate=func.now())
+
+    photo = relationship("Photo", back_populates="faces")

@@ -2,3 +2,4 @@
 venv
 uploads
 .idea
+.DS_Store
